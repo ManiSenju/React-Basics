@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <title>Friendly</title>
+</head>
+<body>
+    <div id="app">React isn't rendered yet</div>
+    <script type="text/babel">
+    // Friendly complex component
+    function Friendly(props){
+        var frStyles = {
+            height:300,
+            width:200,
+            padding:0,
+            display:'inline-block',
+            margin:20,
+            backgroundColor:"#FFF",
+            WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+            filter: "drop-shadow(0px 0px 5px #555)"
+        }
+        return(
+            <div style={frStyles}>
+            <Avatar image={props.image}/>
+            <Username name={props.name}/>
+            <GetConnected/>    
+            </div>
+        );
+    }
+    //Avatar
+    function Avatar(props){
+        var avStyles = {
+            marginTop:20,
+            marginLeft:27,
+            height:150,
+            width:150,
+            borderRadius:"50%"
+        }
+        return (<img  style={avStyles} src={props.image} alt ="profile pic"/>);
+    }
+    //Username
+    function Username(props){
+        var nameStyle = {
+            fontSize: 24,
+            fontFamily: "Arial, Helvetica, sans-serif",
+            margin: 20
+        }
+        return (<h1 style={nameStyle}>{props.name}</h1>);
+    }
+    //Get Connected Apps
+    function GetConnected(){
+        var getConnectedStyles={
+            marginLeft:15
+        }
+        return(
+            <div style={getConnectedStyles}>
+            <Like/>
+            <Share/>
+            <Add/>    
+            </div>
+        );
+    }
+
+
+    var iconStyle = {
+        margin: 20
+      }
+     // like
+     function Like(){
+        return(
+            <i className="fa fa-thumbs-o-up" aria-hidden="true" style={iconStyle}></i>
+        );
+     }
+     // share
+     function Share(){
+        return(
+            <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
+        );
+     }
+     // add
+     function Add(){
+        return(
+            <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
+        );
+     }
+    ReactDOM.render(
+        <div>
+        <Friendly 
+        name="Mani Senju"
+        image = "https://pbs.twimg.com/profile_images/1206026182229016577/mpGCv4gH_400x400.jpg"
+        /> 
+        <Friendly
+        name="Rob"
+        image="https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg"
+        />
+        <Friendly
+        name="Charles"
+        image="https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg"
+        />
+        <Friendly
+        name='Alex'
+        image="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+        />
+        <Friendly
+        name='Natalie'
+        img="https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg"
+        />
+        <Friendly
+        name='Jenny'
+        image="https://static.pexels.com/photos/517061/pexels-photo-517061.jpeg"
+        />
+        <Friendly
+        name='Sarah'
+        image="https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg"
+        />
+        <Friendly
+        name='Josh'
+        img="https://static.pexels.com/photos/428339/pexels-photo-428339.jpeg"
+        />
+        <Friendly
+        name='Kenny'
+        image="https://static.pexels.com/photos/492954/pexels-photo-492954.jpeg"
+        />
+        <Friendly
+        name='John'
+        image="https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg"
+        />
+        <Friendly
+        name='Alisha'
+        image="https://static.pexels.com/photos/520293/pexels-photo-520293.jpeg"
+        />
+      </div>,
+        document.getElementById("app")
+    );
+    </script>
+</body>
+</html>
